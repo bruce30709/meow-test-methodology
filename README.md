@@ -6,6 +6,7 @@
 本文件庫專門公開 **《喵實測》([meowtestlab.com](https://meowtestlab.com))** 的評分公式、維度權重、台灣法規合規原則與各品項社群查驗存證紀錄，方便飼主免下載直接於瀏覽器線上核對。
 
 > **快速檢視：**
+> - [免費公開 REST API & Remote MCP Server 串接文件（給 AI 助理／開發者）](./API_AND_MCP.md)
 > - [完整查驗存證總表（PTT 原文連結、Yahoo 賣場對照、社群口碑歸納）](./AUDIT_EVIDENCE.md)
 > - [社群口碑結構化統計表格（線上可搜尋 CSV）](./data/community-insights-summary.csv)
 
@@ -53,13 +54,13 @@
 貝氏平滑分數 = (10 × 品類平均 + Σ 權重 × 分數) ÷ (10 + Σ 權重)
 ```
 
-| 貓砂綜合評分維度 | 佔比 | 貓飼料綜合評分維度 | 佔比 |
-|---|---:|---|---:|
-| 真實回購率 | 30% | 真實回購率 | 35% |
-| 每貓每日耗材成本（愈低愈高分） | 25% | 挑嘴貓適口性表現 | 30% |
-| 低粉塵表現 | 20% | 每貓每日伙食成本優勢 | 20% |
-| 長效除臭力 | 15% | 低碳水化合物優勢（DMB%） | 15% |
-| 貓咪接受度 | 10% | 處方日糧（依法隔離不排名） | — |
+| 貓砂綜合評分維度 | 佔比 | 貓飼料綜合評分維度（流派中立） | 佔比 | 貓肉泥綜合評分維度 | 佔比 |
+|---|---:|---|---:|---|---:|
+| 口碑回購率 | 30% | 口碑回購率 | 45% | 口碑回購率 | 35% |
+| 單貓日費平滑優勢 | 20% | 挑嘴貓適口性 | 40% | 適口誘食度 | 30% |
+| 低粉塵表現 | 20% | 單貓日費平滑優勢 | 15% | 每 10g 單價優勢 | 20% |
+| 長效除臭力 | 20% | DMB 碳水（另提供獨立排序，不單向扣分熟齡／低脂糧） | — | 標示無人工膠 | 15% |
+| 貓咪接受度 | 10% | 處方日糧（依法隔離不排名、不導購） | — | — | — |
 
 ---
 
@@ -73,4 +74,21 @@
 
 ---
 
-*本文件庫僅公開評分原理與可公開查證之統計存證，供消費者監督與查核之用。*
+## 五、免費公開唯讀 API ＆ Remote MCP Server（給 AI 助理與開發者）
+
+《喵實測》免費開放台灣 **42 款市售貓砂、貓飼料與貓肉泥**的結構化官方規格（DMB 乾物比碳水、粗蛋白／粗脂肪、顆粒 mm 與形狀、無人工膠檢視）、社群優缺點摘要與補貨日曆計算接口——**免 API Key、CORS 全開、零費用**：
+
+| 介面 | 線上網址 | 用途 |
+|---|---|---|
+| **Remote MCP Server** | `https://meowtestlab.com/api/mcp` | 給 Claude、Cursor、Windsurf、各式 MCP 客戶端直接掛載（Streamable HTTP JSON-RPC 2.0） |
+| **OpenAPI 3.1 規格書** | `https://meowtestlab.com/openapi.json` | Custom GPT Actions、Gemini Gem、n8n、Dify、LangChain 一鍵匯入 |
+| **AI 網站索引檔** | `https://meowtestlab.com/llms.txt` | 供 AI 搜尋引擎與 Agent 快速讀取全站 42 款索引 |
+| **商品查詢 API** | `GET https://meowtestlab.com/api/v1/products` | 篩選低碳水（`max_carbs`）、低脂（`max_fat`）、無膠（`gum_free`）、品牌與關鍵字 |
+| **補貨日曆 API（含 `.ics`）** | `GET https://meowtestlab.com/api/v1/restock` | 依貓口數與食量算補貨日、產出 Google Calendar 行程／`RRULE` 循環與 `.ics` 檔 |
+| **DMB 碳水試算 API** | `GET https://meowtestlab.com/api/v1/calc/dmb` | 輸入任何飼料包裝背面保證分析值，秒算乾物比碳水與蛋白 |
+
+👉 **完整串接教學（含 MCP JSON 設定檔、`curl`、iPhone 捷徑與 Google 日曆自動化範例）：請見 [API_AND_MCP.md](./API_AND_MCP.md)**
+
+---
+
+*本文件庫僅公開評分原理、可公開查證之統計存證與公開唯讀 API／MCP 串接說明；所有 API 回傳之 `buy_links` 均明確揭露含蝦皮／momo 聯盟分潤轉址（與官方同價不加價），且絕不涵蓋處方糧與任何醫療建議。*

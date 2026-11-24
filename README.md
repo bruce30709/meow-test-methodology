@@ -1,7 +1,8 @@
 # 喵實測（MeowTestLab）評分方法與透明存證文件庫
 
 [![官網](https://img.shields.io/badge/網站-meowtestlab.com-D04826)](https://meowtestlab.com)
-[![最後更新](https://img.shields.io/badge/存證快照-2026-11-24-116D4B)](./AUDIT_EVIDENCE.md)
+[![最後更新](https://img.shields.io/badge/存證快照-2026--11--24-116D4B)](./AUDIT_EVIDENCE.md)
+[![MCP Ready](https://img.shields.io/badge/MCP-Streamable_HTTP-116D4B)](./API_AND_MCP.md)
 
 本文件庫專門公開 **《喵實測》([meowtestlab.com](https://meowtestlab.com))** 的評分公式、維度權重、台灣法規合規原則與各品項社群查驗存證紀錄，方便飼主免下載直接於瀏覽器線上核對。
 

@@ -1,7 +1,7 @@
 # 喵實測（MeowTestLab）評分方法與透明存證文件庫
 
 [![官網](https://img.shields.io/badge/網站-meowtestlab.com-D04826)](https://meowtestlab.com)
-[![最後更新](https://img.shields.io/badge/存證快照-2026--11--24-116D4B)](./AUDIT_EVIDENCE.md)
+[![最後更新](https://img.shields.io/badge/存證快照-2026--11--25-116D4B)](./AUDIT_EVIDENCE.md)
 [![MCP Ready](https://img.shields.io/badge/MCP-Streamable_HTTP-116D4B)](./API_AND_MCP.md)
 
 本文件庫專門公開 **《喵實測》([meowtestlab.com](https://meowtestlab.com))** 的評分公式、維度權重、台灣法規合規原則與各品項社群查驗存證紀錄，方便飼主免下載直接於瀏覽器線上核對。
@@ -45,6 +45,17 @@
 | **挑嘴貓適口性** | 彙整社群與實測家庭之開袋聞香反應與主動清碗比例（1–5 分） |
 | **每貓每日伙食成本** | 依成貓每日標準熱量攝取克數與大包裝實購均價換算單貓每日開銷（NT$/日） |
 
+### 3. 貓主食罐合規實測維度（AAFCO／FEDIAF 主食規格 ＆ 磷／膠／熱量拆解）
+
+> 本站主食罐品類**嚴格排除副食湯罐與零食罐**，僅收錄符合 AAFCO／FEDIAF 營養標準、可作日常主食之市售主食罐與主食餐包。
+
+| 指標 | 計算與評測方法 |
+|---|---|
+| **磷含量（mg/100kcal）與鈣磷比（Ca:P）** | 依原廠公開檢驗數據換算為每 100 大卡毫克磷；原廠未公開精確磷值之品項（如德國凱琳 Carny）誠實標示為「原廠未公開」，絕不推估捏造 |
+| **無人工膠檢視** | 核對全成分表是否含卡拉膠、瓜爾豆膠、決明子膠、三仙膠等增稠膠類（僅含寒天／蒟蒻等天然膳食纖維或純肉湯者另行註明） |
+| **乾物比碳水（DMB%）** | 去除高水分（75–82%）干擾後還原真實碳水占比，辨別含鷹嘴豆／穀物／木薯澱粉之主食罐 |
+| **全濕食單貓每日成本** | 統一以 **4kg 成貓每日 200 kcal 熱量基準**換算每日所需罐數與開銷（NT$/日），公平對比 80g 台罐與 200g 德罐 |
+
 ---
 
 ## 三、排行綜合分數公式與權重（貝氏平滑）
@@ -63,30 +74,32 @@
 | 長效除臭力 | 20% | DMB 碳水（另提供獨立排序，不單向扣分熟齡／低脂糧） | — | 標示無人工膠 | 15% |
 | 貓咪接受度 | 10% | 處方日糧（依法隔離不排名、不導購） | — | — | — |
 
+**主食罐綜合評分維度（流派中立）：** 口碑回購率 **35%** ＋ 適口性 **30%** ＋ 全濕食日費平滑優勢 **20%** ＋ 無人工膠加權 **15%**（磷含量 `mg/100kcal` 與 DMB 碳水另提供獨立篩選與排序，原廠未公開者不虛構填值）。
+
 ---
 
-## 四、最新公開查驗存證摘要（快照：2026-11-24）
+## 四、最新公開查驗存證摘要（快照：2026-11-25）
 
 | 資料來源 | 收錄規模 | 查驗方式 |
 |---|---|---|
-| **PTT 貓板（cat）** | 掃描 **914** 串公開非交易貼文，實解 **320** 篇全文與 **5,555** 則推文 | [點此查閱各品項 PTT 原文連結](./AUDIT_EVIDENCE.md#一ptt-貓板原文查驗總表) |
-| **Yahoo! 購物中心** | 對應 **687** 個架上賣場，累計 **932** 筆已購買家評分（對應銷量 7,035 件）與 **354** 則文字心得 | [點此查閱各品項賣場存證](./AUDIT_EVIDENCE.md#二yahoo-購物中心已購買家存證總表) |
-| **社群口碑結構化歸納** | 涵蓋 **38** 款市售商品，聚焦非醫療物理與適口性回饋 | [點此查閱歸納總表](./AUDIT_EVIDENCE.md#三社群口碑結構化歸納總表) ／ [CSV 線上檢視](./data/community-insights-summary.csv) |
+| **PTT 貓板（cat）** | 掃描 **1,336** 串公開非交易貼文，實解 **418** 篇全文與 **7,131** 則推文 | [點此查閱各品項 PTT 原文連結](./AUDIT_EVIDENCE.md#一ptt-貓板原文查驗總表) |
+| **Yahoo! 購物中心** | 對應 **830** 個架上賣場，累計 **981** 筆已購買家評分（對應銷量 7,712 件）與 **374** 則文字心得 | [點此查閱各品項賣場存證](./AUDIT_EVIDENCE.md#二yahoo-購物中心已購買家存證總表) |
+| **社群口碑結構化歸納** | 涵蓋 **52** 款市售商品，聚焦非醫療物理與適口性回饋 | [點此查閱歸納總表](./AUDIT_EVIDENCE.md#三社群口碑結構化歸納總表) ／ [CSV 線上檢視](./data/community-insights-summary.csv) |
 
 ---
 
 ## 五、免費公開唯讀 API ＆ Remote MCP Server（給 AI 助理與開發者）
 
-《喵實測》免費開放台灣 **42 款市售貓砂、貓飼料與貓肉泥**的結構化官方規格（DMB 乾物比碳水、粗蛋白／粗脂肪、顆粒 mm 與形狀、無人工膠檢視）、社群優缺點摘要與補貨日曆計算接口——**免 API Key、CORS 全開、零費用**：
+《喵實測》免費開放台灣 **56 款市售貓砂、貓飼料、主食罐與貓肉泥**的結構化官方規格（DMB 乾物比碳水、粗蛋白／粗脂肪、主食罐磷含量 mg/100kcal 與鈣磷比、顆粒 mm 與形狀、無人工膠檢視）、社群優缺點摘要與補貨日曆計算接口——**免 API Key、CORS 全開、零費用**：
 
 | 介面 | 線上網址 | 用途 |
 |---|---|---|
 | **Remote MCP Server** | `https://meowtestlab.com/api/mcp` | 給 Claude、Cursor、Windsurf、各式 MCP 客戶端直接掛載（Streamable HTTP JSON-RPC 2.0） |
 | **OpenAPI 3.1 規格書** | `https://meowtestlab.com/openapi.json` | Custom GPT Actions、Gemini Gem、n8n、Dify、LangChain 一鍵匯入 |
-| **AI 網站索引檔** | `https://meowtestlab.com/llms.txt` | 供 AI 搜尋引擎與 Agent 快速讀取全站 42 款索引 |
-| **商品查詢 API** | `GET https://meowtestlab.com/api/v1/products` | 篩選低碳水（`max_carbs`）、低脂（`max_fat`）、無膠（`gum_free`）、品牌與關鍵字 |
-| **補貨日曆 API（含 `.ics`）** | `GET https://meowtestlab.com/api/v1/restock` | 依貓口數與食量算補貨日、產出 Google Calendar 行程／`RRULE` 循環與 `.ics` 檔 |
-| **DMB 碳水試算 API** | `GET https://meowtestlab.com/api/v1/calc/dmb` | 輸入任何飼料包裝背面保證分析值，秒算乾物比碳水與蛋白 |
+| **AI 網站索引檔** | `https://meowtestlab.com/llms.txt` | 供 AI 搜尋引擎與 Agent 快速讀取全站 56 款索引與 /vs/ PK 頁 |
+| **商品查詢 API** | `GET https://meowtestlab.com/api/v1/products` | 篩選品類（`food`／`wet`／`litter`／`treat`）、低碳水（`max_carbs`）、低脂（`max_fat`）、低磷（`max_phosphorus`）、主食罐質地（`wet_texture`）、無膠（`gum_free`）與關鍵字 |
+| **補貨日曆 API（含 `.ics`）** | `GET https://meowtestlab.com/api/v1/restock` | 依貓口數、食量或罐數算補貨日、產出 Google Calendar 行程／`RRULE` 循環與 `.ics` 檔 |
+| **DMB 碳水試算 API** | `GET https://meowtestlab.com/api/v1/calc/dmb` | 輸入任何飼料或主食罐包裝背面保證分析值，秒算乾物比碳水與蛋白 |
 
 👉 **完整串接教學（含 MCP JSON 設定檔、`curl`、iPhone 捷徑與 Google 日曆自動化範例）：請見 [API_AND_MCP.md](./API_AND_MCP.md)**
 
